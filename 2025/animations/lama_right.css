@@ -1,0 +1,120 @@
+:root {
+  --lr-eye-width: 170px;
+  --lr-eye-height: 190px;
+  --lr-eye-w-half: calc(var(--lr-eye-width) / 2);
+  --lr-eye-h-half: calc(var(--lr-eye-height) / 2);
+  --lr-eyelid-top: calc(0px - var(--lr-eye-height));
+  --lr-iris-width: var(--lr-eye-w-half);
+  --lr-iris-height: var(--lr-eye-h-half);
+  --lr-iris-w-half: calc(var(--lr-iris-width) / 2);
+  --lr-iris-h-half: calc(var(--lr-iris-height) / 2);
+  --lr-iris-top: calc(var(--lr-eye-h-half) - var(--lr-iris-h-half));
+  --lr-iris-left: calc(var(--lr-eye-w-half) - var(--lr-iris-w-half));
+  --lr-pupil-width: var(--lr-iris-w-half);
+  --lr-pupil-height: var(--lr-pupil-width);
+  --lr-glint-width: calc(var(--lr-pupil-width) / 2);
+  --lr-glint-height: var(--lr-glint-width);
+}
+
+.lr-glint {
+  background-color: white;
+  width: var(--lr-glint-width);
+  height: var(--lr-glint-height);
+  border-radius: 50%;
+  position: absolute;
+  left: -3px;
+  overflow: hidden;
+}
+
+.lr-eye {
+  /* opacity: 0.6; */
+  background-color: rgb(202, 205, 207);
+  width: var(--lr-eye-width);
+  height: var(--lr-eye-height);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.lr-eyelid {
+  background-color: #ff6b6b;
+  width: var(--lr-eye-width);
+  height: var(--lr-eye-height);
+  position: absolute;
+  top: var(--lr-eyelid-top);
+  animation-name: lr-eyelid;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes lr-eyelid {
+  0% {
+    top: var(--lr-eyelid-top);
+  }
+
+  15% {
+    top: 0px;
+  }
+
+  30%,
+  100% {
+    top: var(--lr-eyelid-top);
+  }
+}
+
+.lr-iris {
+  background-color: rgb(179, 192, 58);
+  width: var(--lr-iris-width);
+  height: var(--lr-iris-height);
+  border-radius: 50%;
+  position: absolute;
+  top: var(--lr-iris-top);
+  left: var(--lr-iris-left);
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: lr-iris;
+}
+
+@keyframes lr-iris {
+
+  0%,
+  20% {
+    left: var(--lr-iris-left);
+    top: var(--lr-iris-top);
+  }
+
+  25%,
+  40% {
+    left: calc(var(--lr-iris-left) + var(--lr-eye-w-half) - var(--lr-iris-w-half));
+    top: var(--lr-iris-top);
+  }
+
+  45%,
+  65% {
+    left: var(--lr-iris-left);
+    top: var(--lr-iris-top);
+  }
+
+  70%,
+  80% {
+    left: var(--lr-iris-left);
+    top: calc(var(--lr-iris-top) + var(--lr-eye-h-half) - var(--lr-iris-h-half));
+  }
+
+  85%,
+  100% {
+    left: var(--lr-iris-left);
+    top: var(--lr-iris-top);
+  }
+}
+
+.lr-pupille {
+  background-color: rgb(0, 0, 0);
+  width: var(--lr-pupil-width);
+  height: var(--lr-pupil-height);
+  border-radius: 50%;
+  position: absolute;
+  left: calc(var(--lr-iris-w-half) - (var(--lr-pupil-width) / 2));
+  top: calc(var(--lr-iris-h-half) - (var(--lr-pupil-height) / 2));
+}
