@@ -1,5 +1,5 @@
 :root {
-  --lr-eye-width: 300px;
+  --lr-eye-width: 175px;
   --lr-eye-height: 100px;
   --lr-eye-w-half: calc(var(--lr-eye-width) / 2);
   --lr-eye-h-half: calc(var(--lr-eye-height) / 2);
