@@ -37,7 +37,8 @@
 }
 
 .lr-eyelid {
-  background-color: #ff6b6b;
+  /* background-color: #ff6b6b; */
+  background-color: rgb(179, 192, 58);
   width: var(--lr-eye-width);
   height: var(--lr-eye-height);
   position: absolute;
@@ -63,7 +64,8 @@
 }
 
 .lr-iris {
-  background-color: rgb(179, 192, 58);
+  /* background-color: rgb(179, 192, 58); */
+  background-color: rgb(179, 50, 58);
   width: var(--lr-iris-width);
   height: var(--lr-iris-height);
   border-radius: 50%;
