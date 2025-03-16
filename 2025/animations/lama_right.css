@@ -1,6 +1,6 @@
 :root {
   --lr-eye-width: 120px;
-  --lr-eye-height: 120px;
+  --lr-eye-height: 70px;
   --lr-eye-w-half: calc(var(--lr-eye-width) / 2);
   --lr-eye-h-half: calc(var(--lr-eye-height) / 2);
   --lr-eyelid-top: calc(0px - var(--lr-eye-height));
