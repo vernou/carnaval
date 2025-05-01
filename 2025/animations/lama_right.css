@@ -27,7 +27,7 @@
 }
 
 .lr-eye {
-  /* opacity: 0.6; */
+  /* opacity: 0.9; */
   background-color: rgb(202, 205, 207);
   width: var(--lr-eye-width);
   height: var(--lr-eye-height);
@@ -37,7 +37,7 @@
 }
 
 .lr-eyelid {
-  background-color: #ff6b6b;
+  background-color: rgb(235, 231, 15);
   width: var(--lr-eye-width);
   height: var(--lr-eye-height);
   position: absolute;
@@ -63,7 +63,7 @@
 }
 
 .lr-iris {
-  background-color: rgb(179, 192, 58);
+  background-color: rgb(16, 190, 243);
   width: var(--lr-iris-width);
   height: var(--lr-iris-height);
   border-radius: 50%;
@@ -87,7 +87,7 @@
   25%,
   40% {
     left: calc(var(--lr-iris-left) + var(--lr-eye-w-half) - var(--lr-iris-w-half));
-    top: var(--lr-iris-top);
+    top: calc(var(--lr-iris-top) + (var(--lr-eye-h-half) * 0.85) - var(--lr-iris-h-half));
   }
 
   45%,

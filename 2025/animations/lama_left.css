@@ -37,7 +37,7 @@
 }
 
 .lf-eyelid {
-  background-color: #ff6b6b;
+  background-color: rgb(235, 231, 15);
   width: var(--lf-eye-width);
   height: var(--lf-eye-height);
   position: absolute;
@@ -48,14 +48,17 @@
 }
 
 @keyframes lf-eyelid {
+  /* Initial position, eyelid is open */
   0% {
     top: var(--lf-eyelid-top);
   }
 
-  15% {
+  /* Close the eyelid */
+  8% {
     top: 0px;
   }
 
+  /* Open the eyelid */
   30%,
   100% {
     top: var(--lf-eyelid-top);
@@ -63,7 +66,7 @@
 }
 
 .lf-iris {
-  background-color: rgb(179, 192, 58);
+  background-color: rgb(219, 30, 71);
   width: var(--lf-iris-width);
   height: var(--lf-iris-height);
   border-radius: 50%;
@@ -78,30 +81,52 @@
 
 @keyframes lf-iris {
 
+  /* Initial position */
   0%,
-  20% {
+  10% {
     left: var(--lf-iris-left);
     top: var(--lf-iris-top);
   }
 
-  25%,
-  40% {
-    left: calc(var(--lf-iris-left) + var(--lf-eye-w-half) - var(--lf-iris-w-half));
-    top: var(--lf-iris-top);
+  /* Look at the audience on the left */
+  15%,
+  30% {
+    left: calc(var(--lf-iris-left) - var(--lf-eye-w-half) + var(--lf-iris-w-half));
+    top: calc(var(--lf-iris-top) + (var(--lf-eye-h-half) * 0.85) - var(--lf-iris-h-half));
   }
 
+  /* Full turn */
+  /* Move by the bottom */
+  35% {
+    left: calc(var(--lf-iris-left));
+    top: calc(var(--lf-iris-top) + var(--lf-eye-h-half) - (var(--lf-iris-h-half) / 2));
+  }
+  /* Move by the bottom-right */
+  40% {
+    left: calc(var(--lf-iris-left) + var(--lf-eye-w-half) - var(--lf-iris-w-half));
+    top: calc(var(--lf-iris-top) + (var(--lf-eye-h-half) * 0.85) - var(--lf-iris-h-half));
+  }
+
+  /* Return to initial position */
   45%,
   65% {
     left: var(--lf-iris-left);
     top: var(--lf-iris-top);
   }
 
+  /* Rollback by the top */
   70%,
   80% {
     left: var(--lf-iris-left);
-    top: calc(var(--lf-iris-top) + var(--lf-eye-h-half) - var(--lf-iris-h-half));
+    top: calc(var(--lf-iris-top) - var(--lf-eye-h-half) - var(--lf-iris-h-half));
+    animation-timing-function: steps(1, end);
+  }
+  81% {
+    left: var(--lf-iris-left);
+    top: calc(var(--lf-iris-top) + var(--lf-eye-h-half) + var(--lf-iris-h-half));
   }
 
+  /* Return to initial position */
   85%,
   100% {
     left: var(--lf-iris-left);

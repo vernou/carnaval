@@ -27,7 +27,7 @@
 }
 
 .cr-eye {
-  /* opacity: 0.6; */
+  /* opacity: 0.8; */
   background-color: rgb(202, 205, 207);
   width: var(--cr-eye-width);
   height: var(--cr-eye-height);
@@ -63,7 +63,7 @@
 }
 
 .cr-iris {
-  background-color: rgb(179, 192, 58);
+  background-color: rgb(39, 172, 5);
   width: var(--cr-iris-width);
   height: var(--cr-iris-height);
   border-radius: 50%;
