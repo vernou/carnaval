@@ -48,15 +48,19 @@
 }
 
 @keyframes lr-eyelid {
+
+  /* Initial position, eyelid is open */
   0% {
     top: var(--lr-eyelid-top);
   }
 
-  15% {
+  /* Close the eyelid */
+  8% {
     top: 0px;
   }
 
-  30%,
+  /* Open the eyelid */
+  20%,
   100% {
     top: var(--lr-eyelid-top);
   }
