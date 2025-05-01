@@ -90,7 +90,7 @@
 
   25%,
   40% {
-    left: calc(var(--cl-iris-left) + var(--cl-eye-w-half) - var(--cl-iris-w-half));
+    left: calc(var(--cl-iris-left) - var(--cl-eye-w-half) + var(--cl-iris-w-half));
     top: var(--cl-iris-top);
   }
 
