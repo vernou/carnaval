@@ -44,7 +44,7 @@
   position: absolute;
   top: var(--cl-eyelid-top);
   animation-name: cl-eyelid;
-  animation-duration: 5s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-delay: var(--cl-animation-delay);
 }
@@ -57,18 +57,18 @@
   }
 
   /* Close the eyelid */
-  8% {
+  4% {
     top: 0px;
   }
 
   /* Open the eyelid */
-  20%,
+  10%,
   100% {
     top: var(--cl-eyelid-top);
   }
 }
 
-.cl-iris {
+.cl-iris-left {
   background-color: rgb(179, 192, 58);
   width: var(--cl-iris-width);
   height: var(--cl-iris-height);
@@ -79,37 +79,163 @@
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-name: cl-iris;
+  animation-name: cl-iris-left;
   animation-delay: var(--cl-animation-delay);
 }
 
-@keyframes cl-iris {
+@keyframes cl-iris-left {
 
+  /* Initial position */
   0%,
   20% {
     left: var(--cl-iris-left);
     top: var(--cl-iris-top);
   }
 
+  /* Squinty, move to right */
   25%,
   40% {
+    left: calc(var(--cl-iris-left) + (var(--cl-eye-w-half) * 1.2) - var(--cl-iris-w-half));
+    top: var(--cl-iris-top);
+  }
+
+
+  /* Full turn : right top */
+  45% {
+    left: calc(var(--cl-iris-left) + var(--cl-eye-w-half) - var(--cl-iris-w-half));
+    top: calc(var(--cl-iris-top) - (var(--cl-eye-h-half)) + var(--cl-iris-h-half));
+  }
+
+  /* Full turn : top */
+  50% {
+    left: var(--cl-iris-left);
+    top: calc(var(--cl-iris-top) - (var(--cl-eye-h-half) * 1.2) + var(--cl-iris-h-half));
+  }
+
+  /* Full turn : top left */
+  55% {
     left: calc(var(--cl-iris-left) - var(--cl-eye-w-half) + var(--cl-iris-w-half));
+    top: calc(var(--cl-iris-top) - (var(--cl-eye-h-half)) + var(--cl-iris-h-half));
+  }
+
+  /* Full turn : left */
+  60% {
+    left: calc(var(--cl-iris-left) - (var(--cl-eye-w-half) * 1.2) + var(--cl-iris-w-half));
     top: var(--cl-iris-top);
   }
 
-  45%,
+  /* Full turn : left bottom */
   65% {
+    left: calc(var(--cl-iris-left) - var(--cl-eye-w-half) + var(--cl-iris-w-half));
+    top: calc(var(--cl-iris-top) + (var(--cl-eye-h-half)) - var(--cl-iris-h-half));
+  }
+
+  /* Full turn : bottom */
+  70% {
+    left: var(--cl-iris-left);
+    top: calc(var(--cl-iris-top) + (var(--cl-eye-h-half) * 1.2) - var(--cl-iris-h-half));
+  }
+
+  /* Full turn : bottom right */
+  75% {
+    left: calc(var(--cl-iris-left) + var(--cl-eye-w-half) - var(--cl-iris-w-half));
+    top: calc(var(--cl-iris-top) + (var(--cl-eye-h-half)) - var(--cl-iris-h-half));
+  }
+
+  /* Full turn : right - end */
+  80% {
+    left: calc(var(--cl-iris-left) + (var(--cl-eye-w-half) * 1.2) - var(--cl-iris-w-half));
+    top: var(--cl-iris-top);
+  }
+
+  95%,
+  100% {
+    left: var(--cl-iris-left);
+    top: var(--cl-iris-top);
+  }
+}
+
+.cl-iris-right {
+  background-color: rgb(179, 192, 58);
+  width: var(--cl-iris-width);
+  height: var(--cl-iris-height);
+  border-radius: 50%;
+  position: absolute;
+  top: var(--cl-iris-top);
+  left: var(--cl-iris-left);
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: cl-iris-right;
+  animation-delay: var(--cl-animation-delay);
+}
+
+@keyframes cl-iris-right  {
+
+  /* Initial position */
+  0%,
+  20% {
     left: var(--cl-iris-left);
     top: var(--cl-iris-top);
   }
 
-  70%,
-  80% {
-    left: var(--cl-iris-left);
-    top: calc(var(--cl-iris-top) + var(--cl-eye-h-half) - var(--cl-iris-h-half));
+  /* Squinty, move to left */
+  25%,
+  40% {
+    left: calc(var(--cl-iris-left) - (var(--cl-eye-w-half) * 1.2) + var(--cl-iris-w-half));
+    top: var(--cl-iris-top);
   }
 
-  85%,
+
+  /* Full turn : right top */
+  45% {
+    left: calc(var(--cl-iris-left) - var(--cl-eye-w-half) + var(--cl-iris-w-half));
+    top: calc(var(--cl-iris-top) - (var(--cl-eye-h-half)) + var(--cl-iris-h-half));
+  }
+
+  /* Full turn : top */
+  50% {
+    left: var(--cl-iris-left);
+    top: calc(var(--cl-iris-top) - (var(--cl-eye-h-half) * 1.2) + var(--cl-iris-h-half));
+  }
+
+  /* Full turn : top left */
+  55% {
+    left: calc(var(--cl-iris-left) + var(--cl-eye-w-half) - var(--cl-iris-w-half));
+    top: calc(var(--cl-iris-top) - (var(--cl-eye-h-half)) + var(--cl-iris-h-half));
+  }
+
+  /* Full turn : left */
+  60% {
+    left: calc(var(--cl-iris-left) + (var(--cl-eye-w-half) * 1.2) - var(--cl-iris-w-half));
+    top: var(--cl-iris-top);
+  }
+
+  /* Full turn : left bottom */
+  65% {
+    left: calc(var(--cl-iris-left) + var(--cl-eye-w-half) - var(--cl-iris-w-half));
+    top: calc(var(--cl-iris-top) + (var(--cl-eye-h-half)) - var(--cl-iris-h-half));
+  }
+
+  /* Full turn : bottom */
+  70% {
+    left: var(--cl-iris-left);
+    top: calc(var(--cl-iris-top) + (var(--cl-eye-h-half) * 1.2) - var(--cl-iris-h-half));
+  }
+
+  /* Full turn : bottom right */
+  75% {
+    left: calc(var(--cl-iris-left) - var(--cl-eye-w-half) + var(--cl-iris-w-half));
+    top: calc(var(--cl-iris-top) + (var(--cl-eye-h-half)) - var(--cl-iris-h-half));
+  }
+
+  /* Full turn : right - end */
+  80% {
+    left: calc(var(--cl-iris-left) - (var(--cl-eye-w-half) * 1.2) + var(--cl-iris-w-half));
+    top: var(--cl-iris-top);
+  }
+
+  90%,
   100% {
     left: var(--cl-iris-left);
     top: var(--cl-iris-top);
