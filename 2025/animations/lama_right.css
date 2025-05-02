@@ -14,6 +14,7 @@
   --lr-pupil-height: var(--lr-pupil-width);
   --lr-glint-width: calc(var(--lr-pupil-width) / 2);
   --lr-glint-height: var(--lr-glint-width);
+  --lr-animation-delay: 3s;
 }
 
 .lr-glint {
@@ -45,6 +46,7 @@
   animation-name: lr-eyelid;
   animation-duration: 5s;
   animation-iteration-count: infinite;
+  animation-delay: var(--lr-animation-delay);
 }
 
 @keyframes lr-eyelid {
@@ -78,6 +80,7 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: lr-iris;
+  animation-delay: var(--lr-animation-delay);
 }
 
 @keyframes lr-iris {

@@ -118,19 +118,19 @@
 
   /* Rollback by the top */
   70%,
-  80% {
+  71% {
     left: var(--lf-iris-left);
     top: calc(var(--lf-iris-top) - var(--lf-eye-h-half) - var(--lf-iris-h-half));
     animation-timing-function: steps(1, end);
   }
 
-  81% {
+  72% {
     left: var(--lf-iris-left);
     top: calc(var(--lf-iris-top) + var(--lf-eye-h-half) + var(--lf-iris-h-half));
   }
 
   /* Return to initial position */
-  85%,
+  77%,
   100% {
     left: var(--lf-iris-left);
     top: var(--lf-iris-top);

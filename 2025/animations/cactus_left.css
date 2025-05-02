@@ -14,6 +14,7 @@
   --cl-pupil-height: var(--cl-pupil-width);
   --cl-glint-width: calc(var(--cl-pupil-width) / 2);
   --cl-glint-height: var(--cl-glint-width);
+  --cl-animation-delay: 1.5s;
 }
 
 .cl-glint {
@@ -45,6 +46,7 @@
   animation-name: cl-eyelid;
   animation-duration: 5s;
   animation-iteration-count: infinite;
+  animation-delay: var(--cl-animation-delay);
 }
 
 @keyframes cl-eyelid {
@@ -78,6 +80,7 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: cl-iris;
+  animation-delay: var(--cl-animation-delay);
 }
 
 @keyframes cl-iris {
