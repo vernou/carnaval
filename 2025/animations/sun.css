@@ -4,15 +4,15 @@
   --lr-eye-w-half: calc(var(--lr-eye-width) / 2);
   --lr-eye-h-half: calc(var(--lr-eye-height) / 2);
   --lr-eyelid-top: calc(0px - var(--lr-eye-height));
-  --lr-iris-width: var(--lr-eye-w-half);
-  --lr-iris-height: var(--lr-eye-h-half);
+  --lr-iris-width: calc(var(--lr-eye-w-half) * 1.2);
+  --lr-iris-height: calc(var(--lr-eye-h-half) * 1.2);
   --lr-iris-w-half: calc(var(--lr-iris-width) / 2);
   --lr-iris-h-half: calc(var(--lr-iris-height) / 2);
   --lr-iris-top: calc(var(--lr-eye-h-half) - var(--lr-iris-h-half));
   --lr-iris-left: calc(var(--lr-eye-w-half) - var(--lr-iris-w-half));
-  --lr-pupil-width: var(--lr-iris-w-half);
+  --lr-pupil-width: calc(var(--lr-iris-w-half) * 0.8);
   --lr-pupil-height: var(--lr-pupil-width);
-  --lr-glint-width: calc(var(--lr-pupil-width) / 2);
+  --lr-glint-width: calc(var(--lr-pupil-width) * 0.4);
   --lr-glint-height: var(--lr-glint-width);
 }
 
@@ -37,14 +37,13 @@
 }
 
 .lr-eyelid {
-  /* background-color: #ff6b6b; */
   background-color: rgb(179, 192, 58);
   width: var(--lr-eye-width);
   height: var(--lr-eye-height);
   position: absolute;
   top: var(--lr-eyelid-top);
   animation-name: lr-eyelid;
-  animation-duration: 5s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
 }
 
@@ -53,19 +52,18 @@
     top: var(--lr-eyelid-top);
   }
 
-  15% {
+  10% {
     top: 0px;
   }
 
-  30%,
+  20%,
   100% {
     top: var(--lr-eyelid-top);
   }
 }
 
 .lr-iris {
-  /* background-color: rgb(179, 192, 58); */
-  background-color: rgb(179, 50, 58);
+  background-color: rgb(200, 0, 0);
   width: var(--lr-iris-width);
   height: var(--lr-iris-height);
   border-radius: 50%;
@@ -80,31 +78,34 @@
 
 @keyframes lr-iris {
 
+  /* Initial position */
   0%,
   20% {
     left: var(--lr-iris-left);
     top: var(--lr-iris-top);
   }
 
+  /* Move to right bottom */
   25%,
-  40% {
+  50% {
     left: calc(var(--lr-iris-left) + var(--lr-eye-w-half) - var(--lr-iris-w-half));
-    top: var(--lr-iris-top);
-  }
-
-  45%,
-  65% {
-    left: var(--lr-iris-left);
-    top: var(--lr-iris-top);
-  }
-
-  70%,
-  80% {
-    left: var(--lr-iris-left);
     top: calc(var(--lr-iris-top) + var(--lr-eye-h-half) - var(--lr-iris-h-half));
   }
 
-  85%,
+  /* Move to bottom */
+  60% {
+    left: var(--lr-iris-left);
+    top: calc(var(--lr-iris-top) + (var(--lr-eye-h-half) * 1.3) - var(--lr-iris-h-half));
+  }
+
+  /* Move to left bottom */
+  70%,
+  80% {
+    left: calc(var(--lr-iris-left) - var(--lr-eye-w-half) + var(--lr-iris-w-half));
+    top: calc(var(--lr-iris-top) + var(--lr-eye-h-half) - var(--lr-iris-h-half));
+  }
+
+  90%,
   100% {
     left: var(--lr-iris-left);
     top: var(--lr-iris-top);
